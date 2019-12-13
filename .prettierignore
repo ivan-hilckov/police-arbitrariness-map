@@ -1,0 +1,11 @@
+node_modules
+build
+public
+
+.env
+.env.local
+
+.gitignore
+.editorconfig
+
+yarn.lock
