@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ОВД РАЙОНА ФИЛЕВСКИЙ ПАРК",
+        "address": "Москва, ул. Физкультурный проезд, д. 2",
+        "lat": 55.7464534,
+        "lng": 37.5038054
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [37.5038054, 55.7464534]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ОВД РАЙОНА ЛЕФОРТОВО",
+        "address": "Москва, ул. Самокатная, д.3/8, стр. 3",
+        "lat": 55.757965,
+        "lng": 37.680356
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [37.680356, 55.757965]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ОВД РАЙОНА ТВЕРСКОЙ",
+        "address": "Москва, ул. Большая Дмитровка, д. 28",
+        "lat": 55.7647647,
+        "lng": 37.6116387
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [37.6116387, 55.7647647]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ОВД РАЙОНА ИЗМАЙЛОВО",
+        "address": "Москва, Измайловский бульвар, д. 41А",
+        "lat": 55.797599,
+        "lng": 37.79717
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [37.796973, 55.798326]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ОВД РАЙОНА МОСКВОРЕЧЬЕ-САБУРОВО",
+        "address": "Москва, Каширское шоссе, д. 74, к. 3",
+        "lat": 55.641112,
+        "lng": 37.677101
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [37.677101, 55.641112]
+      }
+    }
+  ]
+}

@@ -1,14 +1,14 @@
-const { GetLatLngByAddress } = require('geocoder-free')
 const fs = require('fs')
+const { GetLatLngByAddress } = require('geocoder-free')
 
 const departments = require('../src/data/departments')
 
 Promise.all(
   departments.map(item =>
     GetLatLngByAddress(item.address).then(coordinates => ({
-      ...item,
-      lat: coordinates[0],
-      lng: coordinates[1],
+      type: 'Feature',
+      properties: { ...item },
+      geometry: { type: 'MultiPolygon', coordinates: [coordinates[1], coordinates[0]] },
     }))
   )
 ).then(departmentsWithCoordinates => {

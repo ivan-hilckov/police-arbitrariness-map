@@ -13,7 +13,7 @@ const layerPaintHover = {
   'fill-opacity': 0.75,
 }
 
-const District: React.FC<{ coordinates: number[][][] | number[][][][] }> = ({ coordinates }) => {
+const Department: React.FC<{ coordinates: number[][][] | number[][][][] }> = ({ coordinates }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [hover, setHover] = useState(false)
 
@@ -53,7 +53,14 @@ const District: React.FC<{ coordinates: number[][][] | number[][][][] }> = ({ co
           onMouseLeave={onLayerMouseLive}
         />
       </Layer>
-      <Dialog className={Classes.DARK} icon="info-sign" title="Palantir Foundry" isOpen={isOpen} onClose={onCloseClick} {...dialogState}>
+      <Dialog
+        className={Classes.DARK}
+        icon="info-sign"
+        title="Palantir Foundry"
+        isOpen={isOpen}
+        onClose={onCloseClick}
+        {...dialogState}
+      >
         <div className={Classes.DIALOG_BODY}>
           <p>
             <strong>
@@ -85,4 +92,4 @@ const District: React.FC<{ coordinates: number[][][] | number[][][][] }> = ({ co
   )
 }
 
-export default District
+export default Department
