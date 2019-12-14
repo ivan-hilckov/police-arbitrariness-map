@@ -15,25 +15,20 @@ const layerPaintHover = {
 const District: React.FC<{ coordinates: number[][][] | number[][][][] }> = ({ coordinates }) => {
   const [hover, setHover] = useState(false)
 
-  const onLayerMouseEnter = (map: any) => {
+  const onLayerMouseEnter = ({ map }: any) => {
+    map.getCanvas().style.cursor = 'pointer'
     setHover(true)
   }
 
-  const onLayerMouseLive = (map: any) => {
+  const onLayerMouseLive = ({ map }: any) => {
+    map.getCanvas().style.cursor = ''
     setHover(false)
   }
 
   return (
-      <Layer
-        type="fill"
-        paint={hover ? layerPaintHover : layerPaint}
-      >
-        <Feature
-          onMouseEnter={onLayerMouseEnter}
-          onMouseLeave={onLayerMouseLive}
-          coordinates={coordinates}
-        />
-      </Layer>
+    <Layer type="fill" paint={hover ? layerPaintHover : layerPaint}>
+      <Feature onMouseEnter={onLayerMouseEnter} onMouseLeave={onLayerMouseLive} coordinates={coordinates} />
+    </Layer>
   )
 }
 
