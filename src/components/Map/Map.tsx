@@ -7,10 +7,6 @@ const ReactMapboxGlMap = ReactMapboxGl({
   accessToken: 'pk.eyJ1Ijoic3RyYW5nZW1vbGUiLCJhIjoiY2o4b3RicGp1MDhqNTMycDEyYm85M3B6OSJ9.EEOG8yH_YtIyLmuHv8zc4g',
 })
 
-const feature = geoJson.features[0]
-
-console.log(feature)
-
 const Map = () => {
   const defaultProps = {
     style: 'mapbox://styles/mapbox/streets-v9',
@@ -21,7 +17,7 @@ const Map = () => {
   return (
     <ReactMapboxGlMap {...defaultProps} center={center} zoom={[9]}>
       {geoJson.features.map(item => (
-        <District coordinates={item.geometry.coordinates} />
+        <District coordinates={item.geometry.coordinates} key={item.properties.OKATO} />
       ))}
     </ReactMapboxGlMap>
   )
