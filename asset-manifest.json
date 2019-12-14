@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/police-arbitrariness-map/static/css/main.2c080892.chunk.css",
-    "main.js": "/police-arbitrariness-map/static/js/main.61e76907.chunk.js",
-    "main.js.map": "/police-arbitrariness-map/static/js/main.61e76907.chunk.js.map",
+    "main.js": "/police-arbitrariness-map/static/js/main.e98ab1b1.chunk.js",
+    "main.js.map": "/police-arbitrariness-map/static/js/main.e98ab1b1.chunk.js.map",
     "runtime-main.js": "/police-arbitrariness-map/static/js/runtime-main.7cd6fef3.js",
     "runtime-main.js.map": "/police-arbitrariness-map/static/js/runtime-main.7cd6fef3.js.map",
     "static/css/2.7ca3115f.chunk.css": "/police-arbitrariness-map/static/css/2.7ca3115f.chunk.css",
     "static/js/2.acdc39c9.chunk.js": "/police-arbitrariness-map/static/js/2.acdc39c9.chunk.js",
     "static/js/2.acdc39c9.chunk.js.map": "/police-arbitrariness-map/static/js/2.acdc39c9.chunk.js.map",
     "index.html": "/police-arbitrariness-map/index.html",
-    "precache-manifest.2121bc9a4457fec9bd31b7d7681dda41.js": "/police-arbitrariness-map/precache-manifest.2121bc9a4457fec9bd31b7d7681dda41.js",
+    "precache-manifest.b88456646c1016ff43a270f99973a393.js": "/police-arbitrariness-map/precache-manifest.b88456646c1016ff43a270f99973a393.js",
     "service-worker.js": "/police-arbitrariness-map/service-worker.js",
     "static/css/2.7ca3115f.chunk.css.map": "/police-arbitrariness-map/static/css/2.7ca3115f.chunk.css.map",
     "static/css/main.2c080892.chunk.css.map": "/police-arbitrariness-map/static/css/main.2c080892.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.7ca3115f.chunk.css",
     "static/js/2.acdc39c9.chunk.js",
     "static/css/main.2c080892.chunk.css",
-    "static/js/main.61e76907.chunk.js"
+    "static/js/main.e98ab1b1.chunk.js"
   ]
 }
