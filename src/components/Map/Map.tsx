@@ -17,7 +17,11 @@ const Map = () => {
   return (
     <ReactMapboxGlMap {...defaultProps} center={center} zoom={[9]}>
       {districts.features.map(district => (
-        <District coordinates={district.geometry.coordinates} key={district.properties.OKATO} />
+        <District
+          coordinates={district.geometry.coordinates}
+          key={district.properties.OKATO}
+          properties={district.properties}
+        />
       ))}
     </ReactMapboxGlMap>
   )
