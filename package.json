@@ -5,6 +5,7 @@
   "dependencies": {
     "@blueprintjs/core": "^3.22.2",
     "@blueprintjs/icons": "^3.12.0",
+    "geocoder-free": "^0.1.0",
     "mapbox-gl": "^1.6.0",
     "multi-geocoder": "^0.1.6",
     "normalize.css": "^8.0.1",
