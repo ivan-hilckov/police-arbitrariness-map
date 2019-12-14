@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7886e63b74007d68f34cc92143381615",
+    "revision": "4d05996715c3cbedf85e6114a3b2ce09",
     "url": "/police-arbitrariness-map/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/police-arbitrariness-map/static/css/2.7ca3115f.chunk.css"
   },
   {
-    "revision": "8eb384ddabbcf39f23a1",
+    "revision": "68eccf3521ac3ac23bb2",
     "url": "/police-arbitrariness-map/static/css/main.2c080892.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/police-arbitrariness-map/static/js/2.6b17414f.chunk.js.LICENSE"
   },
   {
-    "revision": "8eb384ddabbcf39f23a1",
-    "url": "/police-arbitrariness-map/static/js/main.6e82a360.chunk.js"
+    "revision": "68eccf3521ac3ac23bb2",
+    "url": "/police-arbitrariness-map/static/js/main.3dbc2396.chunk.js"
   },
   {
     "revision": "88a3ec3e2e16bfce4980",
