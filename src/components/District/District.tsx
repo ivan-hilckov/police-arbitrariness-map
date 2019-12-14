@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { Layer, Feature } from 'react-mapbox-gl'
 
 const layerPaint = {
-  'fill-outline-color': 'red',
-  'fill-color': 'rgba(110,89,159, 0.2)',
+  'fill-outline-color': 'rgba(255, 0, 0, 1)',
+  'fill-color': 'rgba(255, 0, 0, 0.2)',
   'fill-opacity': 0.75,
 }
 const layerPaintHover = {
-  'fill-outline-color': 'green',
-  'fill-color': 'blue',
+  'fill-outline-color': 'rgba(255, 0, 0, 1)',
+  'fill-color': 'rgba(255, 0, 0, 0.8)',
   'fill-opacity': 0.75,
 }
 
