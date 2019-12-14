@@ -1,19 +1,42 @@
 import React, { useState } from 'react'
 import { Classes, Dialog } from '@blueprintjs/core'
-import { Layer, Feature } from 'react-mapbox-gl'
+import { Layer, Marker } from 'react-mapbox-gl'
 
-const layerPaint = {
-  'fill-outline-color': 'rgba(255, 0, 0, 1)',
-  'fill-color': 'rgba(255, 0, 0, 0.2)',
-  'fill-opacity': 0.75,
-}
-const layerPaintHover = {
-  'fill-outline-color': 'rgba(255, 0, 0, 1)',
-  'fill-color': 'rgba(255, 0, 0, 0.8)',
-  'fill-opacity': 0.75,
+const styles: { [key: string]: React.CSSProperties } = {
+  clusterMarker: {
+    width: 30,
+    height: 30,
+    borderRadius: '50%',
+    backgroundColor: '#51D5A0',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'white',
+    border: '2px solid #56C498',
+    cursor: 'pointer'
+  },
+  marker: {
+    width: 30,
+    height: 30,
+    borderRadius: '50%',
+    backgroundColor: '#E0E0E0',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: '2px solid #C9C9C9'
+  }
+};
+
+interface IDistrict {
+  coordinates: number[]
+  properties: {
+    name: string
+    address: string
+  }
 }
 
-const Department: React.FC<{ coordinates: number[][][] | number[][][][] }> = ({ coordinates }) => {
+
+const Department: React.FC<IDistrict> = ({ coordinates, properties }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [hover, setHover] = useState(false)
 
@@ -26,12 +49,10 @@ const Department: React.FC<{ coordinates: number[][][] | number[][][][] }> = ({ 
   }
 
   const onLayerMouseEnter = ({ map }: any) => {
-    map.getCanvas().style.cursor = 'pointer'
     setHover(true)
   }
 
   const onLayerMouseLive = ({ map }: any) => {
-    map.getCanvas().style.cursor = ''
     setHover(false)
   }
 
@@ -45,47 +66,25 @@ const Department: React.FC<{ coordinates: number[][][] | number[][][][] }> = ({ 
 
   return (
     <>
-      <Layer type="fill" paint={hover ? layerPaintHover : layerPaint}>
-        <Feature
-          coordinates={coordinates}
-          onClick={onFeatureClick}
-          onMouseEnter={onLayerMouseEnter}
-          onMouseLeave={onLayerMouseLive}
-        />
-      </Layer>
+      <Marker
+        style={styles.marker}
+        coordinates={coordinates}
+        onClick={onFeatureClick}
+        onMouseEnter={onLayerMouseEnter}
+        onMouseLeave={onLayerMouseLive}
+      >
+        <div title={properties.name} />
+      </Marker>
       <Dialog
         className={Classes.DARK}
         icon="info-sign"
-        title="Palantir Foundry"
+        title={properties.name}
         isOpen={isOpen}
         onClose={onCloseClick}
         {...dialogState}
       >
         <div className={Classes.DIALOG_BODY}>
-          <p>
-            <strong>
-              Data integration is the seminal problem of the digital age. For over ten years, we’ve helped the world’s
-              premier organizations rise to the challenge.
-            </strong>
-          </p>
-          <p>
-            Palantir Foundry radically reimagines the way enterprises interact with data by amplifying and extending the
-            power of data integration. With Foundry, anyone can source, fuse, and transform data into any shape they
-            desire. Business analysts become data engineers — and leaders in their organization’s data revolution.
-          </p>
-          <p>
-            Foundry’s back end includes a suite of best-in-class data integration capabilities: data provenance,
-            git-style versioning semantics, granular access controls, branching, transformation authoring, and more. But
-            these powers are not limited to the back-end IT shop.
-          </p>
-          <p>
-            In Foundry, tables, applications, reports, presentations, and spreadsheets operate as data integrations in
-            their own right. Access controls, transformation logic, and data quality flow from original data source to
-            intermediate analysis to presentation in real time. Every end product created in Foundry becomes a new data
-            source that other users can build upon. And the enterprise data foundation goes where the business drives
-            it.
-          </p>
-          <p>Start the revolution. Unleash the power of data integration with Palantir Foundry.</p>
+          <p>{properties.address}</p>
         </div>
       </Dialog>
     </>
