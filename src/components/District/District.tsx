@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Classes, Dialog } from '@blueprintjs/core'
 import { Layer, Feature } from 'react-mapbox-gl'
+import DetailsDialog from '../DetailsDialog/DetailsDialog'
+import { IDistrict } from '../../interfaces'
 
 const layerPaint = {
   'fill-outline-color': 'rgba(255, 0, 0, 1)',
@@ -13,16 +14,13 @@ const layerPaintHover = {
   'fill-opacity': 0.75,
 }
 
-interface IDistrict {
+const District: React.FC<{
   coordinates: number[][][] | number[][][][]
-  properties: {
-    NAME: string
-    OKATO: string
-    ABBREV: string
+  district: IDistrict
+  offences?: {
+    [key: string]: number
   }
-}
-
-const District: React.FC<IDistrict> = ({ coordinates, properties }) => {
+}> = ({ coordinates, district, offences }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [hover, setHover] = useState(false)
 
@@ -44,14 +42,6 @@ const District: React.FC<IDistrict> = ({ coordinates, properties }) => {
     setHover(false)
   }
 
-  const dialogState = {
-    autoFocus: true,
-    canEscapeKeyClose: true,
-    canOutsideClickClose: true,
-    enforceFocus: true,
-    usePortal: true,
-  }
-
   return (
     <>
       <Layer type="fill" paint={hover ? layerPaintHover : layerPaint}>
@@ -62,19 +52,13 @@ const District: React.FC<IDistrict> = ({ coordinates, properties }) => {
           onMouseLeave={onLayerMouseLive}
         />
       </Layer>
-      <Dialog
-        className={Classes.DARK}
-        icon="info-sign"
-        title={properties.NAME}
+      <DetailsDialog
+        name={district.NAME}
         isOpen={isOpen}
         onClose={onCloseClick}
-        {...dialogState}
-      >
-        <div className={Classes.DIALOG_BODY}>
-          <p>{properties.ABBREV}</p>
-          <p>{properties.OKATO}</p>
-        </div>
-      </Dialog>
+        description={district.ABBREV}
+        offences={offences}
+      />
     </>
   )
 }
