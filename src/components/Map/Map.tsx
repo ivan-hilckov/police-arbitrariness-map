@@ -4,15 +4,15 @@ import District from 'components/District/District'
 import Department from 'components/Department/Department'
 import districts from 'data/districts.json'
 import departments from 'data/departments.json'
-import { IDepartment, IDistrict, IFeature } from 'interfaces'
+import { IDistrict, IFeature } from 'interfaces'
 
 const ReactMapboxGlMap = ReactMapboxGl({
   accessToken: 'pk.eyJ1Ijoic3RyYW5nZW1vbGUiLCJhIjoiY2o4b3RicGp1MDhqNTMycDEyYm85M3B6OSJ9.EEOG8yH_YtIyLmuHv8zc4g',
 })
 
 const offencesOfDistrict = (district: IFeature<IDistrict>) => {
-  const departmentOfDistrict = departments.features.find(
-    (department: IFeature<IDepartment>) => department.properties.districtOKATO === district.properties.OKATO
+  const departmentOfDistrict = departments.features.find((department: any) =>
+    department.properties.districtOKATO ? department.properties.districtOKATO === district.properties.OKATO : false
   )
   return departmentOfDistrict ? departmentOfDistrict.properties.offences : undefined
 }

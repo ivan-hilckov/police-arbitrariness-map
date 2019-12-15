@@ -12,9 +12,13 @@ export interface IDistrict {
 
 export interface IDepartment {
   name: string
-  districtOKATO: string
-  address: string
-  description: string
+  districtOKATO?: string
+  address?: string
+  description?: string
+  area?: any
+  departmentNumber?: any
+  addr?: any
+  number?: any
   offences?: {
     [key: string]: number
   }
