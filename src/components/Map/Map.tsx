@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import ReactMapboxGl from 'react-mapbox-gl'
 import District from 'components/District/District'
 import Department from 'components/Department/Department'
-import districts from './districts.json'
-import departments from './departments.json'
+import districts from '../../data/districts.json'
+import departments from '../../data/departments.json'
 
 const ReactMapboxGlMap = ReactMapboxGl({
   accessToken: 'pk.eyJ1Ijoic3RyYW5nZW1vbGUiLCJhIjoiY2o4b3RicGp1MDhqNTMycDEyYm85M3B6OSJ9.EEOG8yH_YtIyLmuHv8zc4g',
@@ -30,7 +30,7 @@ const Map = () => {
           <Department
             key={`department-${index}`}
             coordinates={department.geometry.coordinates}
-            properties={department.properties}
+            district={department.properties}
           />
         ))}
       </>
