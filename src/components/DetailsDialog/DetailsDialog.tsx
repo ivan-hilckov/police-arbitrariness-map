@@ -7,7 +7,7 @@ interface IDetailsDialog {
   onClose?: IOverlayableProps['onClose']
   title: string
   address?: string
-  description: string
+  description?: string
   offences?: {
     [key: string]: number
   }

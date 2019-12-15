@@ -42,14 +42,16 @@ const Map = () => (
           />
         )
       })}
-      {departments.features.map((department, index) => (
-        <Department
-          key={`department-${index}`}
-          coordinates={department.geometry.coordinates}
-          department={department.properties}
-          allOffencesCount={offencesCount(department.properties.offences)}
-        />
-      ))}
+      {departments.features
+        .filter(department => !!department.properties.offences)
+        .map((department, index) => (
+          <Department
+            key={`department-${index}`}
+            coordinates={department.geometry.coordinates}
+            department={department.properties}
+            allOffencesCount={offencesCount(department.properties.offences)}
+          />
+        ))}
     </>
   </ReactMapboxGlMap>
 )

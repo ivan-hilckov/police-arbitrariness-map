@@ -1369,7 +1369,7 @@
                     "protocol": 0,
                     "phone": 1,
                     "conditionsOfDetention": 2
-                },
+                }
             },
             "geometry": {
                 "type": "Point",
