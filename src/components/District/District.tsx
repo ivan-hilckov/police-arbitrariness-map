@@ -9,7 +9,7 @@ const layerPaint = {
 }
 const layerPaintHover = {
   'fill-outline-color': 'rgba(255, 0, 0, 1)',
-  'fill-color': 'rgba(255, 0, 0, 0.8)',
+  'fill-color': 'rgba(255, 0, 0, 0.6)',
   'fill-opacity': 0.75,
 }
 

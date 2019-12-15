@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Classes, Dialog } from '@blueprintjs/core'
-import { Layer, Marker } from 'react-mapbox-gl'
+import { Marker } from 'react-mapbox-gl'
 
 const styles: { [key: string]: React.CSSProperties } = {
   clusterMarker: {
@@ -23,7 +23,19 @@ const styles: { [key: string]: React.CSSProperties } = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    border: '2px solid #C9C9C9'
+    border: '2px solid #C9C9C9',
+    cursor: 'pointer'
+  },
+  hoveredMarker: {
+    width: 30,
+    height: 30,
+    borderRadius: '50%',
+    backgroundColor: '#E0E0E0',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: '2px solid #000',
+    cursor: 'pointer'
   }
 };
 
@@ -67,7 +79,7 @@ const Department: React.FC<IDistrict> = ({ coordinates, properties }) => {
   return (
     <>
       <Marker
-        style={styles.marker}
+        style={hover ? styles.hoveredMarker : styles.marker }
         coordinates={coordinates}
         onClick={onFeatureClick}
         onMouseEnter={onLayerMouseEnter}
