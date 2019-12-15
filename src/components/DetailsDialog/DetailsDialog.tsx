@@ -27,10 +27,6 @@ const DetailsDialog: React.FC<IDetailsDialog> = ({
   offences,
   allOffencesCount,
 }) => {
-  if (offences) {
-    console.log(getSortedOffences(offences))
-  }
-
   return (
     <Dialog
       className={Classes.DIALOG}
@@ -51,14 +47,14 @@ const DetailsDialog: React.FC<IDetailsDialog> = ({
           <>
             <H4 style={{ marginTop: '15px' }}>Нарушения</H4>
             {getSortedOffences(offences).map(([type, value]) => {
-              return (
+              return value ? (
                 <Offence
                   key={`offenceType-${type}`}
                   offenceType={type}
                   offencesCount={value}
                   allOffencesCount={allOffencesCount}
                 />
-              )
+              ) : null
             })}
           </>
         ) : (
