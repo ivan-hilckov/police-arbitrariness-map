@@ -1,5 +1,5 @@
 import React from 'react'
-import { Classes, Dialog, IOverlayableProps, H3, H4, Text } from '@blueprintjs/core'
+import { Classes, Dialog, IOverlayableProps, H4, Text } from '@blueprintjs/core'
 import Offence from '../Offence/Offence'
 
 interface IDetailsDialog {
@@ -22,7 +22,6 @@ const DetailsDialog: React.FC<IDetailsDialog> = ({
   title,
   isOpen,
   onClose,
-  address,
   description,
   offences,
   allOffencesCount,
