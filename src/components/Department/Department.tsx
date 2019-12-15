@@ -24,7 +24,8 @@ const styles: { [key: string]: React.CSSProperties } = {
 const Department: React.FC<{
   coordinates: number[]
   district: IDepartment
-}> = ({ coordinates, district }) => {
+  allOffencesCount?: number
+}> = ({ coordinates, district, allOffencesCount }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [hover, setHover] = useState(false)
 
@@ -50,6 +51,7 @@ const Department: React.FC<{
         description={district.description}
         address={district.address}
         offences={district.offences}
+        allOffencesCount={allOffencesCount}
       />
     </>
   )

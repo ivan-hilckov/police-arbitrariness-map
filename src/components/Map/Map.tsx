@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactMapboxGl from 'react-mapbox-gl'
 import District from 'components/District/District'
 import Department from 'components/Department/Department'
@@ -16,34 +16,39 @@ const offencesOfDistrict = (district: IFeature<IDistrict>) => {
   return departmentOfDistrict ? departmentOfDistrict.properties.offences : undefined
 }
 
-const Map = () => {
-  const defaultProps = {
-    style: 'mapbox://styles/mapbox/streets-v9',
-    containerStyle: { height: '100vh', width: '100vw' },
-  }
-  const [center] = useState([37.49050140380859, 55.555048994867036] as [number, number])
+const offencesCount = (offences?: { [key: string]: number }) =>
+  offences ? Object.values(offences).reduce((acc, offencesCount) => acc + offencesCount, 0) : undefined
 
-  return (
-    <ReactMapboxGlMap center={center} zoom={[9]} {...defaultProps}>
-      <>
-        {districts.features.map((district, index) => (
+const Map = () => (
+  <ReactMapboxGlMap
+    center={[37.49050140380859, 55.555048994867036]}
+    zoom={[9]}
+    style="mapbox://styles/mapbox/streets-v9"
+    containerStyle={{ height: '100vh', width: '100vw' }}
+  >
+    <>
+      {districts.features.map((district, index) => {
+        const offences = offencesOfDistrict(district)
+        return (
           <District
             key={`district-${index}`}
             coordinates={district.geometry.coordinates}
             district={district.properties}
-            offences={offencesOfDistrict(district)}
+            offences={offences}
+            allOffencesCount={offencesCount(offences)}
           />
-        ))}
-        {departments.features.map((department, index) => (
-          <Department
-            key={`department-${index}`}
-            coordinates={department.geometry.coordinates}
-            district={department.properties}
-          />
-        ))}
-      </>
-    </ReactMapboxGlMap>
-  )
-}
+        )
+      })}
+      {departments.features.map((department, index) => (
+        <Department
+          key={`department-${index}`}
+          coordinates={department.geometry.coordinates}
+          district={department.properties}
+          allOffencesCount={offencesCount(department.properties.offences)}
+        />
+      ))}
+    </>
+  </ReactMapboxGlMap>
+)
 
 export default Map

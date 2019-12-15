@@ -20,7 +20,8 @@ const District: React.FC<{
   offences?: {
     [key: string]: number
   }
-}> = ({ coordinates, district, offences }) => {
+  allOffencesCount?: number
+}> = ({ coordinates, district, offences, allOffencesCount }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [hover, setHover] = useState(false)
 
@@ -58,6 +59,7 @@ const District: React.FC<{
         onClose={onCloseClick}
         description={district.ABBREV}
         offences={offences}
+        allOffencesCount={allOffencesCount}
       />
     </>
   )
