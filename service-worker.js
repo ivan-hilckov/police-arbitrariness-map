@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/police-arbitrariness-map/precache-manifest.c3967803359030ff27aa7ef3aa072dfc.js"
+  "/police-arbitrariness-map/precache-manifest.3d30ba9212698877e62f80220cafda01.js"
 );
 
 self.addEventListener('message', (event) => {

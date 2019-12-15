@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/police-arbitrariness-map/static/css/main.2c080892.chunk.css",
-    "main.js": "/police-arbitrariness-map/static/js/main.5028fba6.chunk.js",
-    "main.js.map": "/police-arbitrariness-map/static/js/main.5028fba6.chunk.js.map",
+    "main.js": "/police-arbitrariness-map/static/js/main.c1169392.chunk.js",
+    "main.js.map": "/police-arbitrariness-map/static/js/main.c1169392.chunk.js.map",
     "runtime-main.js": "/police-arbitrariness-map/static/js/runtime-main.7cd6fef3.js",
     "runtime-main.js.map": "/police-arbitrariness-map/static/js/runtime-main.7cd6fef3.js.map",
     "static/css/2.0c705bcd.chunk.css": "/police-arbitrariness-map/static/css/2.0c705bcd.chunk.css",
-    "static/js/2.5955861d.chunk.js": "/police-arbitrariness-map/static/js/2.5955861d.chunk.js",
-    "static/js/2.5955861d.chunk.js.map": "/police-arbitrariness-map/static/js/2.5955861d.chunk.js.map",
+    "static/js/2.5a8ed6bb.chunk.js": "/police-arbitrariness-map/static/js/2.5a8ed6bb.chunk.js",
+    "static/js/2.5a8ed6bb.chunk.js.map": "/police-arbitrariness-map/static/js/2.5a8ed6bb.chunk.js.map",
     "index.html": "/police-arbitrariness-map/index.html",
-    "precache-manifest.c3967803359030ff27aa7ef3aa072dfc.js": "/police-arbitrariness-map/precache-manifest.c3967803359030ff27aa7ef3aa072dfc.js",
+    "precache-manifest.3d30ba9212698877e62f80220cafda01.js": "/police-arbitrariness-map/precache-manifest.3d30ba9212698877e62f80220cafda01.js",
     "service-worker.js": "/police-arbitrariness-map/service-worker.js",
     "static/css/2.0c705bcd.chunk.css.map": "/police-arbitrariness-map/static/css/2.0c705bcd.chunk.css.map",
     "static/css/main.2c080892.chunk.css.map": "/police-arbitrariness-map/static/css/main.2c080892.chunk.css.map",
-    "static/js/2.5955861d.chunk.js.LICENSE": "/police-arbitrariness-map/static/js/2.5955861d.chunk.js.LICENSE",
+    "static/js/2.5a8ed6bb.chunk.js.LICENSE": "/police-arbitrariness-map/static/js/2.5a8ed6bb.chunk.js.LICENSE",
     "static/media/icon.svg": "/police-arbitrariness-map/static/media/icon.5467ecd9.svg",
     "static/media/blueprint-icons.css": "/police-arbitrariness-map/static/media/icons-20.d1f0f6c1.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.7cd6fef3.js",
     "static/css/2.0c705bcd.chunk.css",
-    "static/js/2.5955861d.chunk.js",
+    "static/js/2.5a8ed6bb.chunk.js",
     "static/css/main.2c080892.chunk.css",
-    "static/js/main.5028fba6.chunk.js"
+    "static/js/main.c1169392.chunk.js"
   ]
 }
