@@ -9,7 +9,7 @@ const offenceLabelFromOffenceType: { [key: string]: string } = {
   pressure: 'Оскорбления и угрозы',
   food: 'Не дают пить и есть',
   medicine: 'Не оказывают медицинскую помощь',
-  fingers: 'Заставляют деать дактилоскопию по административному задержанию',
+  fingers: 'Заставляют делать дактилоскопию по административному задержанию',
   lawyer: 'Не пускают адвокатов',
   detentionTime: 'Превышают время задержания',
   protocol: 'Заставляют подписать ложный протокол',
@@ -28,7 +28,6 @@ const Offence: React.FC<{
     }}
   >
     <H6 style={{ marginBottom: '5px' }}>{`${offenceLabelFromOffenceType[offenceType]}: ${offencesCount}`}</H6>
-
     <ProgressBar animate={false} value={offencesCount / allOffencesCount} intent="danger" />
   </div>
 )

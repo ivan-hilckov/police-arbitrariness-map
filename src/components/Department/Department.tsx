@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Marker } from 'react-mapbox-gl'
 
-import DetailsDialog from '../DetailsDialog/DetailsDialog'
+import DetailsDialog from 'components/DetailsDialog/DetailsDialog'
+import { IDepartment } from 'interfaces'
 import icon from './icon.svg'
-import { IDepartment } from '../../interfaces'
 
 const styles: { [key: string]: React.CSSProperties } = {
   icon: {
