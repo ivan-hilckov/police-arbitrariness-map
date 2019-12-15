@@ -27,7 +27,7 @@ const Map = () => (
     zoom={[9.8]}
     style="mapbox://styles/mapbox/light-v10" //eslint-disable-line
     containerStyle={{ height: '100vh', width: '100vw' }}
-    pitch={[75]}
+    pitch={[45]}
   >
     <>
       {districts.features.map((district, index) => {
