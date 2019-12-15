@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Map from 'components/Map/Map'
-import { Classes, Dialog, H3, H4, Text } from '@blueprintjs/core'
+import { Classes, Dialog, Text } from '@blueprintjs/core'
 import styles from './App.module.css'
 
 const App: React.FC = () => {
@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <div className={styles.app}>
       <Map />
       <Dialog
-        className={Classes.DIALOG}
+        className={Classes.DARK}
         title={'Карта полицейского насилия по районам Москвы'}
         isOpen={isOpen}
         onClose={onCloseClick}

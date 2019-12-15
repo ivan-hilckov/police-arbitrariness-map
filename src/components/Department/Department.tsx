@@ -11,13 +11,14 @@ const styles: { [key: string]: React.CSSProperties } = {
     height: 50,
     cursor: 'pointer',
     transition: 'all 0.3s',
+    opacity: 0.7,
   },
   hoveredIcon: {
     width: 50,
     height: 50,
     cursor: 'pointer',
     transition: 'all 0.3s',
-    filter: 'invert(1)',
+    opacity: 1,
   },
 }
 

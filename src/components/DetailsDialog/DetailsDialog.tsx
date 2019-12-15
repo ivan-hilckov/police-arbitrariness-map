@@ -24,7 +24,7 @@ const DetailsDialog: React.FC<IDetailsDialog> = ({
   allOffencesCount,
 }) => (
   <Dialog
-    className={Classes.DIALOG}
+    className={Classes.DARK}
     icon="badge"
     title={title}
     isOpen={isOpen}
