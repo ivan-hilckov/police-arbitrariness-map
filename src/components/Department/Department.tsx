@@ -1,43 +1,23 @@
 import React, { useState } from 'react'
 import { Classes, Dialog } from '@blueprintjs/core'
 import { Marker } from 'react-mapbox-gl'
+import icon from './icon.svg'
 
 const styles: { [key: string]: React.CSSProperties } = {
-  clusterMarker: {
-    width: 30,
-    height: 30,
-    borderRadius: '50%',
-    backgroundColor: '#51D5A0',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: 'white',
-    border: '2px solid #56C498',
-    cursor: 'pointer'
+  icon: {
+    width: 50,
+    height: 50,
+    cursor: 'pointer',
+    transition: 'all 0.3s',
   },
-  marker: {
-    width: 30,
-    height: 30,
-    borderRadius: '50%',
-    backgroundColor: '#E0E0E0',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    border: '2px solid #C9C9C9',
-    cursor: 'pointer'
+  hoveredIcon: {
+    width: 50,
+    height: 50,
+    cursor: 'pointer',
+    transition: 'all 0.3s',
+    filter: 'invert(1)',
   },
-  hoveredMarker: {
-    width: 30,
-    height: 30,
-    borderRadius: '50%',
-    backgroundColor: '#E0E0E0',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    border: '2px solid #000',
-    cursor: 'pointer'
-  }
-};
+}
 
 interface IDistrict {
   coordinates: number[]
@@ -47,26 +27,14 @@ interface IDistrict {
   }
 }
 
-
 const Department: React.FC<IDistrict> = ({ coordinates, properties }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [hover, setHover] = useState(false)
 
-  const onCloseClick = () => {
-    setIsOpen(false)
-  }
-
-  const onFeatureClick = () => {
-    setIsOpen(true)
-  }
-
-  const onLayerMouseEnter = ({ map }: any) => {
-    setHover(true)
-  }
-
-  const onLayerMouseLive = ({ map }: any) => {
-    setHover(false)
-  }
+  const onCloseClick = () => setIsOpen(false)
+  const onFeatureClick = () => setIsOpen(true)
+  const onLayerMouseEnter = () => setHover(true)
+  const onLayerMouseLive = () => setHover(false)
 
   const dialogState = {
     autoFocus: true,
@@ -79,13 +47,12 @@ const Department: React.FC<IDistrict> = ({ coordinates, properties }) => {
   return (
     <>
       <Marker
-        style={hover ? styles.hoveredMarker : styles.marker }
         coordinates={coordinates}
         onClick={onFeatureClick}
         onMouseEnter={onLayerMouseEnter}
         onMouseLeave={onLayerMouseLive}
       >
-        <div title={properties.name} />
+        <img src={icon} style={hover ? styles.hoveredIcon : styles.icon} />
       </Marker>
       <Dialog
         className={Classes.DARK}
