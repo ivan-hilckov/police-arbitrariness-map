@@ -35,7 +35,7 @@ const DetailsDialog: React.FC<IDetailsDialog> = ({
     enforceFocus
     usePortal
   >
-    <div className={Classes.DIALOG_BODY}>
+    <div className={Classes.DIALOG_BODY} style={{ overflow: 'auto', maxHeight: '75vh' }}>
       {address && <p>{address}</p>}
       <p>{description}</p>
       {offences && allOffencesCount ? (
