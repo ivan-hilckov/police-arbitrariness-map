@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <div className={styles.app}>
       <Map />
       <Dialog
-        className={Classes.DARK}
+        className={Classes.DIALOG}
         title={'Карта полицейского насилия по районам Москвы'}
         isOpen={isOpen}
         onClose={onCloseClick}

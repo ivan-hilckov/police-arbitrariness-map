@@ -25,7 +25,7 @@ const Map = () => (
   <ReactMapboxGlMap
     center={[37.49050140380859, 55.555048994867036]}
     zoom={[9.8]}
-    style="mapbox://styles/mapbox/dark-v10" //eslint-disable-line
+    style="mapbox://styles/mapbox/light-v10" //eslint-disable-line
     containerStyle={{ height: '100vh', width: '100vw' }}
     pitch={[75]}
   >
