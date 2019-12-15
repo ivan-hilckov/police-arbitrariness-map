@@ -23,9 +23,9 @@ const styles: { [key: string]: React.CSSProperties } = {
 
 const Department: React.FC<{
   coordinates: number[]
-  district: IDepartment
+  department: IDepartment
   allOffencesCount?: number
-}> = ({ coordinates, district, allOffencesCount }) => {
+}> = ({ coordinates, department, allOffencesCount }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [hover, setHover] = useState(false)
 
@@ -42,15 +42,15 @@ const Department: React.FC<{
         onMouseEnter={onLayerMouseEnter}
         onMouseLeave={onLayerMouseLive}
       >
-        <img src={icon} style={hover ? styles.hoveredIcon : styles.icon} alt={district.name} />
+        <img src={icon} style={hover ? styles.hoveredIcon : styles.icon} alt={department.name} />
       </Marker>
       <DetailsDialog
-        name={district.name}
+        title={department.name}
         isOpen={isOpen}
         onClose={onCloseClick}
-        description={district.description}
-        address={district.address}
-        offences={district.offences}
+        description={department.description}
+        address={department.address}
+        offences={department.offences}
         allOffencesCount={allOffencesCount}
       />
     </>

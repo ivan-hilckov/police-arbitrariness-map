@@ -5,7 +5,7 @@ import Offence from '../Offence/Offence'
 interface IDetailsDialog {
   isOpen: boolean
   onClose?: IOverlayableProps['onClose']
-  name: string
+  title: string
   address?: string
   description: string
   offences?: {
@@ -15,7 +15,7 @@ interface IDetailsDialog {
 }
 
 const DetailsDialog: React.FC<IDetailsDialog> = ({
-  name,
+  title,
   isOpen,
   onClose,
   address,
@@ -26,7 +26,7 @@ const DetailsDialog: React.FC<IDetailsDialog> = ({
   <Dialog
     className={Classes.DARK}
     icon="info-sign"
-    title={name}
+    title={title}
     isOpen={isOpen}
     onClose={onClose}
     autoFocus

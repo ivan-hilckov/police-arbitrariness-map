@@ -54,7 +54,7 @@ const District: React.FC<{
         />
       </Layer>
       <DetailsDialog
-        name={district.NAME}
+        title={`${district.NAME} Округ`}
         isOpen={isOpen}
         onClose={onCloseClick}
         description={district.ABBREV}

@@ -43,7 +43,7 @@ const Map = () => (
         <Department
           key={`department-${index}`}
           coordinates={department.geometry.coordinates}
-          district={department.properties}
+          department={department.properties}
           allOffencesCount={offencesCount(department.properties.offences)}
         />
       ))}
