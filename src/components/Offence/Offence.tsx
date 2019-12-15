@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProgressBar } from '@blueprintjs/core'
+import { ProgressBar, H6 } from '@blueprintjs/core'
 
 const offenceLabelFromOffenceType: { [key: string]: string } = {
   passport: 'Отнимают паспорт',
@@ -21,11 +21,15 @@ const Offence: React.FC<{
   offencesCount: number
   allOffencesCount: number
 }> = ({ offenceType, offencesCount, allOffencesCount }) => (
-  <div>
-    <p key={offenceType}>{offenceLabelFromOffenceType[offenceType]}</p>
+  <div
+    key={offenceType}
+    style={{
+      marginBottom: '10px',
+    }}
+  >
+    <H6 style={{ marginBottom: '5px' }}>{`${offenceLabelFromOffenceType[offenceType]}: ${offencesCount}`}</H6>
 
-    <ProgressBar animate={false} value={offencesCount / allOffencesCount} />
-    <span>{offencesCount}</span>
+    <ProgressBar animate={false} value={offencesCount / allOffencesCount} intent="danger" />
   </div>
 )
 

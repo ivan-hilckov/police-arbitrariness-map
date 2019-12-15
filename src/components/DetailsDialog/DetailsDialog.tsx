@@ -1,5 +1,5 @@
 import React from 'react'
-import { Classes, Dialog, IOverlayableProps } from '@blueprintjs/core'
+import { Classes, Dialog, IOverlayableProps, H3, H4, Text } from '@blueprintjs/core'
 import Offence from '../Offence/Offence'
 
 interface IDetailsDialog {
@@ -36,11 +36,11 @@ const DetailsDialog: React.FC<IDetailsDialog> = ({
     usePortal
   >
     <div className={Classes.DIALOG_BODY} style={{ overflow: 'auto', maxHeight: '75vh' }}>
-      {address && <p>{address}</p>}
-      <p>{description}</p>
+      {address && <H3>{address}</H3>}
+      <Text>{description}</Text>
       {offences && allOffencesCount ? (
         <>
-          <p>Нарушения</p>
+          <H4 style={{ marginTop: '15px' }}>Нарушения</H4>
           {Object.keys(offences).map(offenceType => (
             <Offence
               key={offenceType}
@@ -51,7 +51,7 @@ const DetailsDialog: React.FC<IDetailsDialog> = ({
           ))}
         </>
       ) : (
-        <p>Нарушений нет</p>
+        <H4>Нарушений нет</H4>
       )}
     </div>
   </Dialog>
