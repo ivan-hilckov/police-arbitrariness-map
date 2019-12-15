@@ -8,6 +8,8 @@ https://ivan-hilckov.github.io/police-arbitrariness-map
 
 Работает как с ПК, так и с телефона.
 
+![](demo.gif)
+
 Данные взяты из [ОВД-Инфо](https://ovdinfo.org).
 
 Проект создан в рамках [I онлайн-хакатона в поддержку политических заключенных](https://github.com/developers-against-repressions/devs-against-the-machine/issues/17).
