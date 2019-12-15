@@ -11,10 +11,56 @@ const ReactMapboxGlMap = ReactMapboxGl({
 })
 
 const offencesOfDistrict = (district: IFeature<IDistrict>) => {
-  const departmentOfDistrict = departments.features.find((department: any) =>
-    department.properties.districtOKATO ? department.properties.districtOKATO === district.properties.OKATO : false
-  )
-  return departmentOfDistrict ? departmentOfDistrict.properties.offences : undefined
+  const departmentOfDistrict = departments.features
+    .filter((department: any) => {
+      return department.properties.districtOKATO === district.properties.OKATO
+    })
+    .map(item => item?.properties?.offences)
+    .filter(item => !!item)
+    .reduce(
+      (item, memo) => {
+        if (!memo || !item) {
+          return memo
+        }
+
+        return {
+          policeCar: memo.policeCar + item.policeCar,
+          detentionTime: memo.detentionTime + item.detentionTime,
+          pressure: memo.pressure + item.pressure,
+          searchWithoutWitnesses: memo.searchWithoutWitnesses + item.searchWithoutWitnesses,
+          food: memo.food + item.food,
+          journalist: memo.journalist + item.journalist,
+          violence: memo.violence + item.violence,
+          medicine: memo.medicine + item.medicine,
+          lawyer: memo.lawyer + item.lawyer,
+          minor: memo.minor + item.minor,
+          fingers: memo.fingers + item.fingers,
+          passport: memo.passport + item.passport,
+          protocol: memo.protocol + item.protocol,
+          phone: memo.phone + item.phone,
+          conditionsOfDetention: memo.conditionsOfDetention + item.conditionsOfDetention,
+        }
+      },
+      {
+        policeCar: 0,
+        detentionTime: 0,
+        pressure: 0,
+        searchWithoutWitnesses: 0,
+        food: 0,
+        journalist: 0,
+        violence: 0,
+        medicine: 0,
+        lawyer: 0,
+        minor: 0,
+        fingers: 0,
+        passport: 0,
+        protocol: 0,
+        phone: 0,
+        conditionsOfDetention: 0,
+      }
+    )
+
+  return departmentOfDistrict
 }
 
 const offencesCount = (offences?: { [key: string]: number }) => {
