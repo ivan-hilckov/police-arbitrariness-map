@@ -14,6 +14,9 @@ const offenceLabelFromOffenceType: { [key: string]: string } = {
   detentionTime: 'Превышают время задержания',
   protocol: 'Заставляют подписать ложный протокол',
   journalist: 'Задержали журналиста',
+  searchWithoutWitnesses: 'Досмотр без понятых',
+  minor: 'Несовершеннолетний подросток',
+  conditionsOfDetention: 'Условия содержания под стражей',
 }
 
 const Offence: React.FC<{

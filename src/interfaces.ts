@@ -15,7 +15,7 @@ export interface IDepartment {
   districtOKATO: string
   address: string
   description: string
-  offences: {
+  offences?: {
     [key: string]: number
   }
 }
