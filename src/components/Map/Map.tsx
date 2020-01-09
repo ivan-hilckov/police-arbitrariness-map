@@ -7,7 +7,7 @@ import departments from 'data/departments.json'
 import { IDistrict, IFeature } from 'interfaces'
 
 const ReactMapboxGlMap = ReactMapboxGl({
-  accessToken: 'pk.eyJ1Ijoic3RyYW5nZW1vbGUiLCJhIjoiY2o4b3RicGp1MDhqNTMycDEyYm85M3B6OSJ9.EEOG8yH_YtIyLmuHv8zc4g',
+  accessToken: 'pk.eyJ1IjoiY2Jyd2l6YXJkIiwiYSI6ImNrNTY0M2lvMTAxYjAza21uMmgwdDMxdjcifQ.PVt3l_iRhrHr32VIcgZ0bA',
 })
 
 const offencesOfDistrict = (district: IFeature<IDistrict>) => {
