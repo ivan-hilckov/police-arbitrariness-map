@@ -2,7 +2,10 @@
 
 Интерактивная карта просмотра нарушений со стороны полиции по округам и ОВД Москвы.
 
-https://ivan-hilckov.github.io/police-arbitrariness-map
+Сам сайт: https://ivan-hilckov.github.io/police-arbitrariness-map
+
+Презентация в формате pdf: https://github.com/ivan-hilckov/police-arbitrariness-map/raw/master/police-arbitrariness-map.pdf
+
 
 На карте отмечены все округа и ОВД Москвы. При нажатии на любой из них отображается информационный диалог с описанием и количеством нарушений из этого округа или ОВД.
 
